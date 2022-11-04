@@ -48,7 +48,7 @@ include "conn.php";
                 if ($resultado->num_rows > 0) {
                     while ($row = $resultado->fetch_assoc()) {
                         echo "<br>
-                                <b>Nombre</b>: " . $row['nombre'] . "<br>
+                                <b>Nombre</b>: " . $row['nombres'] . "<br>
                                 <b>Rut</b>: " . $row['rut'] . "<br>
                                 <b>Nacionalidad</b>: " . $row['nacionalidad'] . "<br><br>";
                     }
