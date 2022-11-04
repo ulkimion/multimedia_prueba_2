@@ -20,7 +20,7 @@ include "conn.php";
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-              <a class="nav-link" href="registro.html">Ingresar Persona</a>
+              <a class="nav-link" href="registro.php">Ingresar Persona</a>
               <a class="nav-link" href="#">Lista Personas</a>
               <a class="nav-link" href="estadisticas.html">Estadisticas</a>
             </div>
