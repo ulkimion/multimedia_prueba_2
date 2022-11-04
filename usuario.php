@@ -41,7 +41,7 @@ include "conn.php";
                 ?>
 
             </div>
-            <div class="col-md-5 col-sm-12"><!-- datos del accesorio.id-->
+            <div class="col-md-5 col-sm-12">
                 <?php
                 $sql = "SELECT * from usuarios WHERE id=$id";
                 $resultado = $conexion->query($sql);
