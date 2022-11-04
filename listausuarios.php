@@ -29,7 +29,7 @@ include "conn.php";
       </nav>
 
 
-      <div class="album py-5 bg-light">
+      <div class="py-5 bg-light">
         <div class="container">
             <div class="container">
                 <div class="row">
@@ -43,11 +43,11 @@ include "conn.php";
                             <div class='card mb-4 box-shadow'>
                                 <img class='card-img-top' data-src='holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail' alt='Thumbnail [100%x225]' style='height: 225px; width: 100%; display: block;' src='img/" . $row['foto'] . "' data-holder-rendered='true'>
                                 <div class='card-body' style='text-align: center;'>
-                                    <p class='card-text'><b>" . $row['nombres'] . $row['apellidos'] . "</b></p>
+                                    <p class='card-text'><b>" . $row['nombres'] .' '. $row['apellidos'] . "</b></p>
                                     <p class='card-text'>" . $row['rut'] . "</p>
                                     <div class='d-flex justify-content-between align-items-center'>
                                         <div class='btn-group'>
-                                            <a href='#.php?id=" . $row['id'] . "'><button type='button' class='btn btn-sm btn-outline-secondary'>Perfil</button></a>
+                                            <a href='usuario.php?id=" . $row['id'] . "'><button type='button' class='btn btn-sm btn-outline-secondary'>Perfil</button></a>
                                         </div>
                                     </div>
                                 </div>
