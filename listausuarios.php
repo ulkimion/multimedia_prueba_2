@@ -28,40 +28,40 @@ include "conn.php";
         </div>
       </nav>
 
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Rut</th>
+            <th scope="col">Perfil</th>
+            </tr>
+    </thead>
 
-      <div class="py-5 bg-light">
-        <div class="container">
-            <div class="container">
-                <div class="row">
-                    <?php
-                    $sql = "SELECT * from usuarios ORDER BY id DESC";
-                    $resultado = $conexion->query($sql);
-                    if ($resultado->num_rows > 0) {
-                        while ($row = $resultado->fetch_assoc()) {
-                            echo "
-                        <div class='col-md-4 col-sm-12'>
-                            <div class='card mb-4 box-shadow'>
-                                <img class='card-img-top' data-src='holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail' alt='Thumbnail [100%x225]' style='height: 225px; width: 100%; display: block;' src='img/" . $row['foto'] . "' data-holder-rendered='true'>
-                                <div class='card-body' style='text-align: center;'>
-                                    <p class='card-text'><b>" . $row['nombres'] .' '. $row['apellidos'] . "</b></p>
-                                    <p class='card-text'>" . $row['rut'] . "</p>
-                                    <div class='d-flex justify-content-between align-items-center'>
-                                        <div class='btn-group'>
-                                            <a href='usuario.php?id=" . $row['id'] . "'><button type='button' class='btn btn-sm btn-outline-secondary'>Perfil</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        ";
-                        }
-                    }
-                    ?>
-                </div>
-            </div>
-        </div>
-    </div>
+<?php 
 
+    $query = mysqli_query($conexion,"SELECT id, nombres, apellidos, rut FROM usuarios");
+    
+    $result = mysqli_num_rows($query);
+    if($result > 0){
+
+        while ($data = mysqli_fetch_array($query)){
+?>
+    <tr>
+        <td><?php echo $data["id"]; ?></td>
+        <td><?php echo $data["nombres"]; ?></td>
+        <td><?php echo $data["apellidos"]; ?></td>
+        <td><?php echo $data["rut"]; ?></td>
+        <td><a href="usuario.php?id='<?php echo $data["id"]?>'"><button type='button' class='btn btn-sm btn-outline-secondary'>Perfil</button></a></td>
+    </tr>
+<?php
+        }
+    }
+?>
+
+
+</table>
       <footer class="text-center text-white fixed-bottom" style="background-color: #221144;">
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             Tecnología Multimedia - 2º Semestre 2022 <br>
