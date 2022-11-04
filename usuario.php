@@ -49,8 +49,13 @@ include "conn.php";
                     while ($row = $resultado->fetch_assoc()) {
                         echo "<br>
                                 <b>Nombre</b>: " . $row['nombres'] . "<br>
-                                <b>Rut</b>: " . $row['rut'] . "<br>
-                                <b>Nacionalidad</b>: " . $row['nacionalidad'] . "<br><br>";
+                                <b>Apellidos</b>: " . $row['apellidos'] . "<br>
+                                <b>Edad</b>:" . $row['edad'] . "<br>
+                                <b>Rut</b>:" . $row['rut'] . "<br>
+                                <b>Nacionalidad</b>:" . $row['nacionalidad'] . "<br>
+                                <b>Genero</b>:" . $row['genero'] . "<br>
+                                <b>Ciudad de residencia</b>: " . $row['ciudad_residencia'] . "<br>
+                                <br>";
                     }
                 }
                 ?>
