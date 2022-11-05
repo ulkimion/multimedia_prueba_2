@@ -21,7 +21,7 @@ include "conn.php";
               <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
               <a class="nav-link" href="registro.php">Ingresar Persona</a>
               <a class="nav-link" href="listausuarios.php">Lista Personas</a>
-              <a class="nav-link" href="estadisticas.html">Estadisticas</a>
+              <a class="nav-link" href="estadisticas.php">Estadisticas</a>
             </div>
           </div>
         </div>
