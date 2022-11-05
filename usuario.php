@@ -50,7 +50,7 @@ include "conn.php";
                         echo "<br>
                                 <b>Nombre</b>: " . $row['nombres'] . "<br>
                                 <b>Apellidos</b>: " . $row['apellidos'] . "<br>
-                                <b>Edad</b>:" . $row['edad'] . "<br>
+                                <b>Fecha de nacimiento</b>:" . $row['fecha_nacimiento'] . "<br>
                                 <b>Rut</b>:" . $row['rut'] . "<br>
                                 <b>Nacionalidad</b>:" . $row['nacionalidad'] . "<br>
                                 <b>Genero</b>:" . $row['genero'] . "<br>
