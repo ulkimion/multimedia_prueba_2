@@ -10,6 +10,7 @@ $GLOBALS["ciudad_residencia"] = $_REQUEST['ciudad_residencia'] ;
 $GLOBALS["nombre_completo"] = $nombres.' '.$apellidos;
 
 $GLOBALS["bandera"] = 'pais/'.$nacionalidad.'.png';
+$GLOBALS["qr"] = 'qrimg/'.$nombres.'.png';
 require('fpdf/fpdf.php');
 
 class PDF extends FPDF
