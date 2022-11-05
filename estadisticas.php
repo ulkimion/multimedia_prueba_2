@@ -4,17 +4,25 @@ include "conn.php";
 $Chilena = mysqli_query($conexion, "select count(*) as cantidad from usuarios where nacionalidad='Chilena'") or
 die("Problemas en el select:" . mysqli_error($conexion));
 $chile = mysqli_fetch_array($Chilena);
-//echo "La cantidad de alumnos inscriptos son :" . $chile['cantidad'];
+//echo "chilenos :" . $chile['cantidad'];
 
 $Uruguaya = mysqli_query($conexion, "select count(*) as cantidad from usuarios where nacionalidad='Uruguaya'") or
 die("Problemas en el select:" . mysqli_error($conexion));
 $uruguay = mysqli_fetch_array($Uruguaya);
-//echo "<br>La cantidad de alumnos inscriptos son :" . $uruguay['cantidad'];
+//echo "<br>urugayos :" . $uruguay['cantidad'];
 
 $Canadiense = mysqli_query($conexion, "select count(*) as cantidad from usuarios where nacionalidad='Canadiense'") or
 die("Problemas en el select:" . mysqli_error($conexion));
 $canada = mysqli_fetch_array($Canadiense);
-//echo "<br>La cantidad de alumnos inscriptos son :" . $canada['cantidad'];
+//echo "<br>canadienses :" . $canada['cantidad'];
+
+//para tabla de edades
+
+$diez = mysqli_query($conexion, "select count(*) as cantidad from usuarios where fecha_nacimiento between '#2022/11/06#' and '#2012/11/06#'") or
+die("Problemas en el select:" . mysqli_error($conexion));
+$x = mysqli_fetch_array($diez);
+echo "<br>menores de 10 :" . $x['cantidad'];
+
 
 ?>
 
@@ -53,6 +61,33 @@ $canada = mysqli_fetch_array($Canadiense);
       }
     </script>
 
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
 
 
 </head>
@@ -74,7 +109,10 @@ $canada = mysqli_fetch_array($Canadiense);
       </nav>
 
 
-      <div id="piechart" style="width: 1200px; height: 800px;"></div>
+      <div id="piechart" style="width: 1500px; height: 900px;"></div>
+
+
+      <div id="barchart_material" style="width: 1200px; height: 500px;"></div>
 
 
       <footer class="text-center text-white fixed-bottom" style="background-color: #221144;">
