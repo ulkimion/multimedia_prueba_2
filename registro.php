@@ -25,7 +25,7 @@
       </nav>
 
 
-      <form action="Procesar Formulario.php" method="GET">
+      <form action="procesar_formulario.php" method="GET">
             <table>
                 <tr>
                     <td>NOMBRE</td>
@@ -41,7 +41,7 @@
                 </tr>
                 <tr>
                     <td>FECHA DE NACIMIENTO</td>
-                    <td> <input type="text" placeholder="ingresa tu fecha de nacimiento" name="fecha de nacimiento"></td>
+                    <td> <input type="text" placeholder="ingresa tu fecha de nacimiento" name="fecha_nacimiento"></td>
                 </tr>
                 <tr>
                     <td>NACIONALIDAD</td>
@@ -62,7 +62,7 @@
                 </tr>
                 <tr>
                     <td>CIUDAD DE RESIDENCIA</td>
-                    <td> <input type="text" placeholder="ingresa tu ciudad de residencia" name="residencia"></td>
+                    <td> <input type="text" placeholder="ingresa tu ciudad de residencia" name="ciudad_residencia"></td>
                 </tr>
                 <tr>
                     <td>
