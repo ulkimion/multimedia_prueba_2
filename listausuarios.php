@@ -36,12 +36,13 @@ include "conn.php";
             <th scope="col">Apellidos</th>
             <th scope="col">Rut</th>
             <th scope="col">Perfil</th>
+            <th scope="col">PDF</th>
             </tr>
     </thead>
 
 <?php 
 
-    $query = mysqli_query($conexion,"SELECT id, nombres, apellidos, rut FROM usuarios");
+    $query = mysqli_query($conexion,"SELECT id, nombres, apellidos, fecha_nacimiento, rut, nacionalidad, genero, ciudad_residencia FROM usuarios");
     
     $result = mysqli_num_rows($query);
     if($result > 0){
@@ -53,7 +54,10 @@ include "conn.php";
         <td><?php echo $data["nombres"]; ?></td>
         <td><?php echo $data["apellidos"]; ?></td>
         <td><?php echo $data["rut"]; ?></td>
-        <td><a href="usuario.php?id='<?php echo $data["id"]?>'"><button type='button' class='btn btn-sm btn-outline-secondary'>Perfil</button></a></td>
+        <td><a href="usuario.php?id=<?php echo $data["id"]?>"><button type='button' 
+        class='btn btn-danger btn-outline-secondary'>Perfil</button></a></td>
+        <td><a href="crear_pdf.php?id=<?php echo $data["id"]?>&nombres=<?php echo $data["nombres"]?>&apellidos=<?php echo $data["apellidos"]?>&fecha_nacimiento=<?php echo $data["fecha_nacimiento"]?>&rut=<?php echo $data["rut"]?>&nacionalidad=<?php echo $data["nacionalidad"]?>&genero=<?php echo $data["genero"]?>&ciudad_residencia=<?php echo $data["ciudad_residencia"]?>">
+        <button type='button' class='btn btn-info btn-outline-secondary'>Crear PDF</button></a></td>
     </tr>
 <?php
         }
@@ -64,7 +68,7 @@ include "conn.php";
 </table>
       <footer class="text-center text-white fixed-bottom" style="background-color: #221144;">
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            Tecnología Multimedia - 2º Semestre 2022 <br>
+            Tecnología Multimedia - CIF 6558 - 06/11/2022 <br>
             Benjamin Gonzalez Fredes <br>
             Nicolas Cepeda Zamorano
 

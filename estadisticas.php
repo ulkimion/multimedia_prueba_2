@@ -1,3 +1,23 @@
+<?php
+include "conn.php";
+
+$Chilena = mysqli_query($conexion, "select count(*) as cantidad from usuarios where nacionalidad='Chilena'") or
+die("Problemas en el select:" . mysqli_error($conexion));
+$chile = mysqli_fetch_array($Chilena);
+//echo "La cantidad de alumnos inscriptos son :" . $chile['cantidad'];
+
+$Uruguaya = mysqli_query($conexion, "select count(*) as cantidad from usuarios where nacionalidad='Uruguaya'") or
+die("Problemas en el select:" . mysqli_error($conexion));
+$uruguay = mysqli_fetch_array($Uruguaya);
+//echo "<br>La cantidad de alumnos inscriptos son :" . $uruguay['cantidad'];
+
+$Canadiense = mysqli_query($conexion, "select count(*) as cantidad from usuarios where nacionalidad='Canadiense'") or
+die("Problemas en el select:" . mysqli_error($conexion));
+$canada = mysqli_fetch_array($Canadiense);
+//echo "<br>La cantidad de alumnos inscriptos son :" . $canada['cantidad'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +35,12 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
+          
           ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['Gente Chilena',     <?php echo $chile['cantidad']?>],
+          ['Gente Uruguaya',      <?php echo $uruguay['cantidad']?>],
+          ['Gente Canadiense',  <?php echo $canada['cantidad']?>],
+
         ]);
 
         var options = {
@@ -59,7 +79,7 @@
 
       <footer class="text-center text-white fixed-bottom" style="background-color: #221144;">
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            Tecnología Multimedia - 2º Semestre 2022 <br>
+            Tecnología Multimedia - CIF 6558 - 06/11/2022  <br>
             Benjamin Gonzalez Fredes <br>
             Nicolas Cepeda Zamorano
 
