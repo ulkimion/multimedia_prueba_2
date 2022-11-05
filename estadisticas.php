@@ -1,7 +1,20 @@
 <?php
 include "conn.php";
-$sql1 = "SELECT COUNT(Chilena) FROM usuarios";
-echo $sql1;
+
+$Chilena = mysqli_query($conexion, "select count(*) as cantidad from usuarios where nacionalidad='Chilena'") or
+die("Problemas en el select:" . mysqli_error($conexion));
+$chile = mysqli_fetch_array($Chilena);
+//echo "La cantidad de alumnos inscriptos son :" . $chile['cantidad'];
+
+$Uruguaya = mysqli_query($conexion, "select count(*) as cantidad from usuarios where nacionalidad='Uruguaya'") or
+die("Problemas en el select:" . mysqli_error($conexion));
+$uruguay = mysqli_fetch_array($Uruguaya);
+//echo "<br>La cantidad de alumnos inscriptos son :" . $uruguay['cantidad'];
+
+$Canadiense = mysqli_query($conexion, "select count(*) as cantidad from usuarios where nacionalidad='Canadiense'") or
+die("Problemas en el select:" . mysqli_error($conexion));
+$canada = mysqli_fetch_array($Canadiense);
+//echo "<br>La cantidad de alumnos inscriptos son :" . $canada['cantidad'];
 
 ?>
 
@@ -22,9 +35,12 @@ echo $sql1;
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          <?php 
-            
-          ?>
+          
+          ['Task', 'Hours per Day'],
+          ['Gente Chilena',     <?php echo $chile['cantidad']?>],
+          ['Gente Uruguaya',      <?php echo $uruguay['cantidad']?>],
+          ['Gente Canadiense',  <?php echo $canada['cantidad']?>],
+
         ]);
 
         var options = {
