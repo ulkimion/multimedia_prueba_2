@@ -29,24 +29,24 @@
             <table>
                 <tr>
                     <td>NOMBRE</td>
-                    <td> <input type="text" placeholder="ingresa tu nombre" name="nombre"></td>
+                    <td> <input type="text" placeholder="ingresa tu nombre" name="nombre" required></td>
                 </tr>
                 <tr>
                     <td>APELLIDO</td>
-                    <td> <input type="text" placeholder="ingresa tu apellido" name="apellido"></td>
+                    <td> <input type="text" placeholder="ingresa tu apellido" name="apellido" required></td>
                 </tr>
                 <tr>
                     <td>RUT</td>
-                    <td> <input type="text" placeholder="ingresa tu Rut" name="rut"></td>
+                    <td> <input type="text" placeholder="ingresa tu Rut" name="rut" required></td>
                 </tr>
                 <tr>
                     <td>FECHA DE NACIMIENTO</td>
-                    <td> <input type="text" placeholder="ingresa tu fecha de nacimiento" name="fecha_nacimiento"></td>
+                    <td> <input type="text" placeholder="ingresa tu fecha de nacimiento" name="fecha_nacimiento" required></td>
                 </tr>
                 <tr>
                     <td>NACIONALIDAD</td>
                     <td> 
-                        <select name="nacionalidad">
+                        <select name="nacionalidad" required>
                             <option value="">Chilena</option>
                             <option value="">Canadiense</option>
                             <option value="">Uruguaya</option>
@@ -62,12 +62,12 @@
                 </tr>
                 <tr>
                     <td>CIUDAD DE RESIDENCIA</td>
-                    <td> <input type="text" placeholder="ingresa tu ciudad de residencia" name="ciudad_residencia"></td>
+                    <td> <input type="text" placeholder="ingresa tu ciudad de residencia" name="ciudad_residencia" required></td>
                 </tr>
                 <tr>
                     <td>
                     <label for="foto">Foto:</label>
-                    <input type="file" id="foto" name="foto">
+                    <input type="file" id="foto" name="foto" required>
                     </td>
                 </tr>
                 <tr>
