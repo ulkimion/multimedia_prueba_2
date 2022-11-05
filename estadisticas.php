@@ -1,3 +1,10 @@
+<?php
+include "conn.php";
+$sql1 = "SELECT COUNT(Chilena) FROM usuarios";
+echo $sql1;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +22,9 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          <?php 
+            
+          ?>
         ]);
 
         var options = {
