@@ -1,4 +1,4 @@
-<php? 
+<?php 
 
 $nombre = $_GET["NOMBRE"];
 $apellido = $_GET["APELLIDO"];
