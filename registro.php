@@ -76,7 +76,7 @@
                     </td>
                 </tr>
             </table>
-
+        </form>
 
       <footer class="text-center text-white fixed-bottom" style="background-color: #221144;">
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">

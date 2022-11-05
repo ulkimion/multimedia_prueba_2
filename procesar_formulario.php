@@ -15,3 +15,4 @@ echo "$nacionalidad";
 echo "$genero";
 echo "$ciudad_residencia";
 
+?>
