@@ -25,7 +25,7 @@
       </nav>
 
 
-      <form action="procesar_formulario.php" method="GET">
+      <form action="procesar_formulario.php" method="POST">
             <table>
                 <tr>
                     <td>NOMBRE</td>

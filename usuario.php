@@ -55,13 +55,25 @@ include "conn.php";
                                 <b>Nacionalidad</b>:" . $row['nacionalidad'] . "<br>
                                 <b>Genero</b>:" . $row['genero'] . "<br>
                                 <b>Ciudad de residencia</b>: " . $row['ciudad_residencia'] . "<br>
-                                <br>"
-                    <form action="crear_pdf" method="post"></form><;
+                                <br>";
                     }
+                    while ($row = $resultado->fetch_assoc()){
+                                $nombre = $_GET["nombres"];
+                                $apellido = $_GET["apellidos"];
+                                $rut = $_GET["rut"];
+                                $fecha_nacimiento = $_GET ["fecha_nacimiento"];
+                                $nacionalidad = $_GET ["nacionalidad"];
+                                $genero = $_GET ["genero"];
+                                $ciudad_residencia = $_GET["ciudad_residencia"];
+                  }  
                 }
-                ?>
+              ?>
+              
             </div>
         </div>
+      
+<a href="crear_pdf.php?nombres=nombres&apellidos=apellidos&rut=rut&fecha_nacimiento=fecha_nacimiento&nacionalidad=nacionalidad&genero=genero&ciudad_residencia=ciudad_residencia">        
+<button>Crear PDF</button>  
 
 
       <footer class="text-center text-white fixed-bottom" style="background-color: #221144;">
