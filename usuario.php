@@ -21,7 +21,7 @@ include "conn.php";
               <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
               <a class="nav-link" href="registro.php">Ingresar Persona</a>
               <a class="nav-link" href="listausuarios.php">Lista Personas</a>
-              <a class="nav-link" href="estadisticas.html">Estadisticas</a>
+              <a class="nav-link" href="estadisticas.php">Estadisticas</a>
             </div>
           </div>
         </div>
@@ -50,24 +50,37 @@ include "conn.php";
                         echo "<br>
                                 <b>Nombre</b>: " . $row['nombres'] . "<br>
                                 <b>Apellidos</b>: " . $row['apellidos'] . "<br>
-                                <b>Edad</b>:" . $row['edad'] . "<br>
+                                <b>Fecha de nacimiento</b>:" . $row['fecha_nacimiento'] . "<br>
                                 <b>Rut</b>:" . $row['rut'] . "<br>
                                 <b>Nacionalidad</b>:" . $row['nacionalidad'] . "<br>
                                 <b>Genero</b>:" . $row['genero'] . "<br>
                                 <b>Ciudad de residencia</b>: " . $row['ciudad_residencia'] . "<br>
                                 <br>";
                     }
+                    while ($row = $resultado->fetch_assoc()){
+                                $nombre = $_GET["nombres"];
+                                $apellido = $_GET["apellidos"];
+                                $rut = $_GET["rut"];
+                                $fecha_nacimiento = $_GET ["fecha_nacimiento"];
+                                $nacionalidad = $_GET ["nacionalidad"];
+                                $genero = $_GET ["genero"];
+                                $ciudad_residencia = $_GET["ciudad_residencia"];
+                  }  
                 }
-                ?>
+              ?>
+              
             </div>
         </div>
+      
+<a href="crear_pdf.php?nombres=nombres&apellidos=apellidos&rut=rut&fecha_nacimiento=fecha_nacimiento&nacionalidad=nacionalidad&genero=genero&ciudad_residencia=ciudad_residencia">        
+<button>Crear PDF</button>  
 
 
       <footer class="text-center text-white fixed-bottom" style="background-color: #221144;">
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             Tecnología Multimedia - 2º Semestre 2022 <br>
             Benjamin Gonzalez Fredes <br>
-            (Multi)
+            Nicolas Cepeda Zamorano
 
         </div>
       </footer>

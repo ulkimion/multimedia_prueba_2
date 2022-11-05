@@ -18,14 +18,14 @@
               <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
               <a class="nav-link" href="#">Ingresar Persona</a>
               <a class="nav-link" href="listausuarios.php">Lista Personas</a>
-              <a class="nav-link" href="estadisticas.html">Estadisticas</a>
+              <a class="nav-link" href="estadisticas.php">Estadisticas</a>
             </div>
           </div>
         </div>
       </nav>
 
 
-      <form action="Procesar Formulario.php" method="GET">
+      <form action="procesar_formulario.php" method="POST">
             <table>
                 <tr>
                     <td>NOMBRE</td>
@@ -41,7 +41,7 @@
                 </tr>
                 <tr>
                     <td>FECHA DE NACIMIENTO</td>
-                    <td> <input type="text" placeholder="ingresa tu fecha de nacimiento" name="fecha de nacimiento"></td>
+                    <td> <input type="text" placeholder="ingresa tu fecha de nacimiento" name="fecha_nacimiento"></td>
                 </tr>
                 <tr>
                     <td>NACIONALIDAD</td>
@@ -62,7 +62,7 @@
                 </tr>
                 <tr>
                     <td>CIUDAD DE RESIDENCIA</td>
-                    <td> <input type="text" placeholder="ingresa tu ciudad de residencia" name="residencia"></td>
+                    <td> <input type="text" placeholder="ingresa tu ciudad de residencia" name="ciudad_residencia"></td>
                 </tr>
                 <tr>
                     <td>
