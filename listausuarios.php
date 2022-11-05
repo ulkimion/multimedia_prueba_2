@@ -66,7 +66,7 @@ include "conn.php";
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             Tecnología Multimedia - 2º Semestre 2022 <br>
             Benjamin Gonzalez Fredes <br>
-            (Multi)
+            Nicolas Cepeda Zamorano
 
         </div>
       </footer>
