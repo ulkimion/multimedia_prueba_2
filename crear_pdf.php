@@ -1,10 +1,23 @@
 <?php
+
+$GLOBALS["nombres"] = $_REQUEST['nombres'];
+$GLOBALS["apellidos"] = $_REQUEST['apellidos'];
+$GLOBALS["rut"] = $_REQUEST['rut'];
+$GLOBALS["fecha_nacimiento"] = $_REQUEST['fecha_nacimiento'];
+$GLOBALS["genero"] = $_REQUEST['genero'];
+$GLOBALS["nacionalidad"] = $_REQUEST['nacionalidad'];
+$GLOBALS["ciudad_residencia"] = $_REQUEST['ciudad_residencia'] ;
+$GLOBALS["nombre_completo"] = $nombres.' '.$apellidos;
+
+$GLOBALS["bandera"] = 'pais/'.$nacionalidad.'.png';
 require('fpdf/fpdf.php');
 
 class PDF extends FPDF
 {
 function Header()
 {
+
+
     // Logo
     $this->Image('logo_upla.png',70,4,60);
     $this->Ln(30);
@@ -19,7 +32,7 @@ function Header()
     $this->Ln(14);
     $this->SetFont('Helvetica','i',18);
     $this->Cell(100);
-    $this->Cell(1,15,'Nombre y Apellido',0,0,'l');
+    $this->Cell(1,15,$GLOBALS["nombre_completo"],0,0,'l');
     $this->Ln(25);
 
     //Rut
@@ -29,7 +42,7 @@ function Header()
     $this->Ln(14);
     $this->SetFont('Helvetica','i',18);
     $this->Cell(100);   
-    $this->Cell(1,15,'xx.xxx.xxx-x',0,0,'l');
+    $this->Cell(1,15,$GLOBALS["nombres"],0,0,'l');
     $this->Ln(42);
 
     //Fecha de nacimiento 
@@ -45,10 +58,10 @@ function Header()
 
     //Datos
     $this->SetFont('Helvetica','i',18); 
-    $this->Cell(1,15,'xxxx/xx/xx',0,0,'l');
+    $this->Cell(1,15,$GLOBALS["nombres"],0,0,'l');
     $this->SetFont('Helvetica','i',18);
     $this->Cell(110);   
-    $this->Cell(1,15,'genero',0,0,'l');
+    $this->Cell(1,15,$GLOBALS["nombres"],0,0,'l');
     $this->Ln(40); 
 
     //Nacionalidad
@@ -63,14 +76,14 @@ function Header()
     //datos
     $this->Ln(14);
     $this->SetFont('Helvetica','i',18); 
-    $this->Cell(1,15,'nacionalidad',0,0,'l');
+    $this->Cell(1,15,$GLOBALS["nombres"],0,0,'l');
     $this->Cell(110);   
-    $this->Cell(1,15,'residencia',0,0,'l');
+    $this->Cell(1,15,$GLOBALS["nombres"],0,0,'l');
     $this->Ln(40); 
 
     //Bandera
     $this->Ln(40); 
-    $this->Image('pais/chile.png',10,250,50);
+    $this->Image($GLOBALS["bandera"],10,250,50);
     
     //QR
     $this->Ln(40); 

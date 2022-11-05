@@ -57,23 +57,23 @@ include "conn.php";
                                 <b>Ciudad de residencia</b>: " . $row['ciudad_residencia'] . "<br>
                                 <br>";
                     }
-                    while ($row = $resultado->fetch_assoc()){
-                                $nombre = $_GET["nombres"];
-                                $apellido = $_GET["apellidos"];
-                                $rut = $_GET["rut"];
-                                $fecha_nacimiento = $_GET ["fecha_nacimiento"];
-                                $nacionalidad = $_GET ["nacionalidad"];
-                                $genero = $_GET ["genero"];
-                                $ciudad_residencia = $_GET["ciudad_residencia"];
-                  }  
                 }
               ?>
               
             </div>
         </div>
-      
-<a href="crear_pdf.php?nombres=nombres&apellidos=apellidos&rut=rut&fecha_nacimiento=fecha_nacimiento&nacionalidad=nacionalidad&genero=genero&ciudad_residencia=ciudad_residencia">        
-<button>Crear PDF</button>  
+        <?php
+        $query = mysqli_query($conexion,"SELECT id, nombres, apellidos, fecha_nacimiento, rut, nacionalidad, genero, ciudad_residencia FROM usuarios");
+        $data = mysqli_fetch_array($query);
+        if($resultado->num_rows > 0){
+        ?>
+        <tr>
+        <td><a href="crear_pdf.php?id=<?php echo $data["id"]?>&nombres=<?php echo $data["nombres"]?>&apellidos=<?php echo $data["apellidos"]?>&fecha_nacimiento=<?php echo $data["fecha_nacimiento"]?>&rut=<?php echo $data["rut"]?>&nacionalidad=<?php echo $data["nacionalidad"]?>&genero=<?php echo $data["genero"]?>&ciudad_residencia=<?php echo $data["ciudad_residencia"]?>    ">
+        <button type='button' class='btn btn-sm btn-outline-secondary'>Crear PDF</button></a></td>
+        </tr>
+        <?php
+        }
+?>
 
 
       <footer class="text-center text-white fixed-bottom" style="background-color: #221144;">

@@ -53,7 +53,7 @@ include "conn.php";
         <td><?php echo $data["nombres"]; ?></td>
         <td><?php echo $data["apellidos"]; ?></td>
         <td><?php echo $data["rut"]; ?></td>
-        <td><a href="usuario.php?id='<?php echo $data["id"]?>'"><button type='button' class='btn btn-sm btn-outline-secondary'>Perfil</button></a></td>
+        <td><a href="usuario.php?id=<?php echo $data["id"]?>"><button type='button' class='btn btn-sm btn-outline-secondary'>Perfil</button></a></td>
     </tr>
 <?php
         }

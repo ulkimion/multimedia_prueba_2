@@ -1,14 +1,14 @@
 <?php 
 
-$nombre = $POST["nombre"];
-$apellido = $POST["apellido"];
+$nombres = $POST["nombres"];
+$apellidos = $POST["apellidos"];
 $rut = $POST["rut"];
 $fecha_nacimiento = $POST ["fecha_nacimiento"];
 $nacionalidad = $POST ["nacionalidad"];
 $genero = $POST ["genero"];
 $ciudad_residencia = $POST["ciudad_residencia"];
 
-echo "$nombre $apellido";
+echo "$nombres $apellidso";
 echo "$rut";
 echo "$fecha_nacimiento";
 echo "$nacionalidad";
