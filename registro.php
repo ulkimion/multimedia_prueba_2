@@ -29,11 +29,11 @@
             <table>
                 <tr>
                     <td>NOMBRE</td>
-                    <td> <input type="text" placeholder="ingresa tu nombre" name="nombre" required></td>
+                    <td> <input type="text" placeholder="ingresa tu nombre" name="nombres" required></td>
                 </tr>
                 <tr>
                     <td>APELLIDO</td>
-                    <td> <input type="text" placeholder="ingresa tu apellido" name="apellido" required></td>
+                    <td> <input type="text" placeholder="ingresa tu apellido" name="apellidos" required></td>
                 </tr>
                 <tr>
                     <td>RUT</td>
@@ -46,18 +46,18 @@
                 <tr>
                     <td>NACIONALIDAD</td>
                     <td> 
-                        <select name="nacionalidad" required>
-                            <option value="">Chilena</option>
-                            <option value="">Canadiense</option>
-                            <option value="">Uruguaya</option>
+                        <select name="nacionalidad">
+                            <option value="Chilena">Chilena</option>
+                            <option value="Canadiense">Canadiense</option>
+                            <option value="Uruguay">Uruguaya</option>
                         </select>
                 </td>
                 </tr>
                 <tr>
                     <td>GENERO</td>
-                    <td> <input type="radio" name="genero"> FEMENINO
-                         <input type="radio" name="genero"> MASCULINO
-                         <input type="radio" name="genero"> OTRO
+                    <td> <input type="radio" name="genero" value="Femenino"> FEMENINO
+                         <input type="radio" name="genero" value="Masculino"> MASCULINO
+                         <input type="radio" name="genero" value="OTRO"> OTRO
                 </td>
                 </tr>
                 <tr>
