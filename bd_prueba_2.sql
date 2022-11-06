@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2022 at 03:37 AM
+-- Generation Time: Nov 06, 2022 at 03:54 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -32,7 +32,7 @@ CREATE TABLE `usuarios` (
   `nombres` varchar(50) NOT NULL,
   `apellidos` varchar(50) NOT NULL,
   `nacionalidad` varchar(10) NOT NULL,
-  `genero` int(1) NOT NULL,
+  `genero` varchar(9) NOT NULL,
   `ciudad_residencia` varchar(30) NOT NULL,
   `foto` varchar(100) NOT NULL,
   `fecha_nacimiento` date NOT NULL,
@@ -44,12 +44,13 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombres`, `apellidos`, `nacionalidad`, `genero`, `ciudad_residencia`, `foto`, `fecha_nacimiento`, `rut`) VALUES
-(11, 'NombreA nombreA', 'ApellidoA ApellidoA', 'Chilena', 0, 'Ciudad', 'img/06-11-202203-16-56_7870NombreA nombreA.png', '2022-11-09', 11111),
-(12, 'NombreB nombreB', 'ApellidoB ApellidoB', 'Chilena', 0, 'Ciudad', 'img/06-11-202203-17-28_4068NombreB nombreB.png', '2011-12-09', 22222),
-(13, 'NombreC nombreC', 'ApellidoC ApellidoC', 'Canadiense', 0, 'Ciudad', 'img/06-11-202203-17-53_3398NombreC nombreC.png', '1998-01-09', 33333),
-(14, 'NombreD nombreD', 'ApellidoD ApellidoD', 'Uruguay', 0, 'Ciudad', 'img/06-11-202203-18-19_3230NombreD nombreD.png', '1986-10-09', 44444),
-(15, 'NombreE nombreE', 'ApellidoE ApellidoE', 'Canadiense', 0, 'Ciudad', 'img/06-11-202203-18-45_9026NombreE nombreE.png', '1977-11-09', 55555),
-(16, 'NombreF nombreF', 'ApellidoF ApellidoF', 'Canadiense', 0, 'Ciudad', 'img/06-11-202203-19-29_5234NombreE nombreE.png', '1977-11-09', 55555);
+(11, 'NombreA nombreA', 'ApellidoA ApellidoA', 'Chilena', 'OTRO', 'Ciudad', 'img/06-11-202203-16-56_7870NombreA nombreA.png', '2022-11-09', 11111),
+(12, 'NombreB nombreB', 'ApellidoB ApellidoB', 'Chilena', 'OTRO', 'Ciudad', 'img/06-11-202203-17-28_4068NombreB nombreB.png', '2011-12-09', 22222),
+(13, 'NombreC nombreC', 'ApellidoC ApellidoC', 'Canadiense', 'OTRO', 'Ciudad', 'img/06-11-202203-17-53_3398NombreC nombreC.png', '1998-01-09', 33333),
+(14, 'NombreD nombreD', 'ApellidoD ApellidoD', 'Uruguay', 'Masculino', 'Ciudad', 'img/06-11-202203-18-19_3230NombreD nombreD.png', '1986-10-09', 44444),
+(15, 'NombreE nombreE', 'ApellidoE ApellidoE', 'Canadiense', 'Masculino', 'Ciudad', 'img/06-11-202203-18-45_9026NombreE nombreE.png', '1977-11-09', 55555),
+(16, 'NombreF nombreF', 'ApellidoF ApellidoF', 'Canadiense', 'Femenino', 'Ciudad', 'img/06-11-202203-19-29_5234NombreE nombreE.png', '1977-11-09', 55555),
+(17, '0', '9', 'Canadiense', 'Femenino', '9', 'img/06-11-202203-52-19_26940.png', '2022-11-02', 99999);
 
 --
 -- Indexes for dumped tables
@@ -69,7 +70,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
