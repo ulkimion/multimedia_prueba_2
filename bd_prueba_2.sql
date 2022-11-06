@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2022 at 05:15 PM
+-- Generation Time: Nov 06, 2022 at 03:20 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -34,7 +34,7 @@ CREATE TABLE `usuarios` (
   `nacionalidad` varchar(10) NOT NULL,
   `genero` int(1) NOT NULL,
   `ciudad_residencia` varchar(30) NOT NULL,
-  `foto` int(11) NOT NULL,
+  `foto` varchar(100) NOT NULL,
   `fecha_nacimiento` date NOT NULL,
   `rut` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -44,8 +44,12 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombres`, `apellidos`, `nacionalidad`, `genero`, `ciudad_residencia`, `foto`, `fecha_nacimiento`, `rut`) VALUES
-(1, 'test', 'test', 'test', 0, 'test', 0, '0000-00-00', 0),
-(2, 'test2', 'test2', 'test2', 0, 'test', 1, '0000-00-00', 222);
+(11, 'NombreA nombreA', 'ApellidoA Apell', 'Chilena', 0, 'Ciudad', 'img/06-11-202203-16-56_7870NombreA nombreA.png', '2022-11-09', 11111),
+(12, 'NombreB nombreB', 'ApellidoB Apell', 'Chilena', 0, 'Ciudad', 'img/06-11-202203-17-28_4068NombreB nombreB.png', '2011-12-09', 22222),
+(13, 'NombreC nombreC', 'ApellidoC Apell', 'Canadiense', 0, 'Ciudad', 'img/06-11-202203-17-53_3398NombreC nombreC.png', '1998-01-09', 33333),
+(14, 'NombreD nombreD', 'ApellidoD Apell', 'Uruguay', 0, 'Ciudad', 'img/06-11-202203-18-19_3230NombreD nombreD.png', '1986-10-09', 44444),
+(15, 'NombreE nombreE', 'ApellidoE Apell', 'Canadiense', 0, 'Ciudad', 'img/06-11-202203-18-45_9026NombreE nombreE.png', '1977-11-09', 55555),
+(16, 'NombreE nombreE', 'ApellidoE Apell', 'Canadiense', 0, 'Ciudad', 'img/06-11-202203-19-29_5234NombreE nombreE.png', '1977-11-09', 55555);
 
 --
 -- Indexes for dumped tables
@@ -65,7 +69,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

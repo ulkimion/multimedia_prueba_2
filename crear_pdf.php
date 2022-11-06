@@ -7,10 +7,11 @@ $GLOBALS["fecha_nacimiento"] = $_REQUEST['fecha_nacimiento'];
 $GLOBALS["genero"] = $_REQUEST['genero'];
 $GLOBALS["nacionalidad"] = $_REQUEST['nacionalidad'];
 $GLOBALS["ciudad_residencia"] = $_REQUEST['ciudad_residencia'] ;
-$GLOBALS["nombre_completo"] = $nombres.' '.$apellidos;
+$GLOBALS["foto"] = $_REQUEST['foto'] ;
 
+$GLOBALS["nombre_completo"] = $nombres.' '.$apellidos;
 $GLOBALS["bandera"] = 'pais/'.$nacionalidad.'.png';
-$GLOBALS["qr"] = 'qrimg/'.$nombres.'.png';
+$GLOBALS["qr"] = 'qrimg/'.$nombres.'_'.$apellidos.'_qr.png';
 require('fpdf/fpdf.php');
 
 class PDF extends FPDF
@@ -24,7 +25,7 @@ function Header()
     $this->Ln(30);
 
     // Imagen perfil
-    $this->Image('img/perfil.jpg',10,30,90);
+    $this->Image($GLOBALS["foto"],10,30,90);
 
     //Nombre
     $this->SetFont('Helvetica','u',26);
@@ -33,7 +34,11 @@ function Header()
     $this->Ln(14);
     $this->SetFont('Helvetica','i',18);
     $this->Cell(100);
-    $this->Cell(1,15,$GLOBALS["nombre_completo"],0,0,'l');
+    $this->Cell(1,15,$GLOBALS["nombres"],0,0,'l');
+    $this->Ln(8);
+    $this->SetFont('Helvetica','i',18);
+    $this->Cell(100);
+    $this->Cell(1,15,$GLOBALS["apellidos"],0,0,'l');
     $this->Ln(25);
 
     //Rut
@@ -88,7 +93,7 @@ function Header()
     
     //QR
     $this->Ln(40); 
-    $this->Image('pais/chile.png',120,250,50);    
+    $this->Image($GLOBALS["qr"],120,240,50);    
     
 }
 

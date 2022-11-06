@@ -42,7 +42,7 @@ include "conn.php";
 
 <?php 
 
-    $query = mysqli_query($conexion,"SELECT id, nombres, apellidos, fecha_nacimiento, rut, nacionalidad, genero, ciudad_residencia FROM usuarios");
+    $query = mysqli_query($conexion,"SELECT id, nombres, apellidos, fecha_nacimiento, rut, nacionalidad, genero, ciudad_residencia, foto FROM usuarios");
     
     $result = mysqli_num_rows($query);
     if($result > 0){
@@ -56,7 +56,7 @@ include "conn.php";
         <td><?php echo $data["rut"]; ?></td>
         <td><a href="usuario.php?id=<?php echo $data["id"]?>"><button type='button' 
         class='btn btn-danger btn-outline-secondary'>Perfil</button></a></td>
-        <td><a href="crear_pdf.php?id=<?php echo $data["id"]?>&nombres=<?php echo $data["nombres"]?>&apellidos=<?php echo $data["apellidos"]?>&fecha_nacimiento=<?php echo $data["fecha_nacimiento"]?>&rut=<?php echo $data["rut"]?>&nacionalidad=<?php echo $data["nacionalidad"]?>&genero=<?php echo $data["genero"]?>&ciudad_residencia=<?php echo $data["ciudad_residencia"]?>">
+        <td><a href="crear_pdf.php?id=<?php echo $data["id"]?>&nombres=<?php echo $data["nombres"]?>&apellidos=<?php echo $data["apellidos"]?>&fecha_nacimiento=<?php echo $data["fecha_nacimiento"]?>&rut=<?php echo $data["rut"]?>&nacionalidad=<?php echo $data["nacionalidad"]?>&genero=<?php echo $data["genero"]?>&ciudad_residencia=<?php echo $data["ciudad_residencia"]?>&foto=<?php echo $data["foto"]?>">
         <button type='button' class='btn btn-info btn-outline-secondary'>Crear PDF</button></a></td>
     </tr>
 <?php
