@@ -1,7 +1,7 @@
 <?php
 require 'phpqrcode/qrlib.php';
 
-$dir = 'temp/';
+$dir = 'qrimg/';
 
 if(!file_exists ($dir))
     mkdir($dir);
