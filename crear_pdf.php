@@ -48,7 +48,7 @@ function Header()
     $this->Ln(14);
     $this->SetFont('Helvetica','i',18);
     $this->Cell(100);   
-    $this->Cell(1,15,$GLOBALS["nombres"],0,0,'l');
+    $this->Cell(1,15,$GLOBALS["rut"],0,0,'l');
     $this->Ln(42);
 
     //Fecha de nacimiento 
@@ -64,10 +64,10 @@ function Header()
 
     //Datos
     $this->SetFont('Helvetica','i',18); 
-    $this->Cell(1,15,$GLOBALS["nombres"],0,0,'l');
+    $this->Cell(1,15,$GLOBALS["fecha_nacimiento"],0,0,'l');
     $this->SetFont('Helvetica','i',18);
     $this->Cell(110);   
-    $this->Cell(1,15,$GLOBALS["nombres"],0,0,'l');
+    $this->Cell(1,15,$GLOBALS["genero"],0,0,'l');
     $this->Ln(40); 
 
     //Nacionalidad
@@ -82,9 +82,9 @@ function Header()
     //datos
     $this->Ln(14);
     $this->SetFont('Helvetica','i',18); 
-    $this->Cell(1,15,$GLOBALS["nombres"],0,0,'l');
+    $this->Cell(1,15,$GLOBALS["nacionalidad"],0,0,'l');
     $this->Cell(110);   
-    $this->Cell(1,15,$GLOBALS["nombres"],0,0,'l');
+    $this->Cell(1,15,$GLOBALS["ciudad_residencia"],0,0,'l');
     $this->Ln(40); 
 
     //Bandera
