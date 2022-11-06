@@ -20,7 +20,20 @@ echo "$genero";
 echo "<br>";
 echo "$ciudad_residencia";
 echo "<br>";
-                echo "Los registros se ingresaron con éxito";
+
+include "conn.php";
+$sql="INSERT INTO usuarios(nombres, apellidos, nacionalidad, genero, ciudad_residencia, foto, fecha_nacimiento, rut) 
+values('$nombres','$apellidos','$nacionalidad','$genero','$ciudad_residencia','1','$fecha_nacimiento','$rut')";
+if($conexion->query($sql)===TRUE)
+{
+    echo "Los registros se ingresaron con éxito";
+}
+else
+{
+    echo "Error en el ingreso".$sql."<br>".$conexion->error;
+}
+$conexion->close();
+
             include "generarqr.php" 
 
 ?>
