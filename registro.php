@@ -25,7 +25,7 @@
       </nav>
 
 
-      <form action="procesar_formulario.php" method="POST">
+      <form action="procesar_formulario.php" method="POST" enctype="multipart/form-data">
             <table>
                 <tr>
                     <td>NOMBRE</td>
@@ -66,8 +66,8 @@
                 </tr>
                 <tr>
                     <td>
-                    <label for="foto">Foto:</label>
-                    <input type="file" id="foto" name="foto" required>
+                    <label for="fileToUpload">Foto:</label>
+                    <input type="file" id="fileToUpload" name="fileToUpload" required>
                     </td>
                 </tr>
                 <tr>

@@ -22,8 +22,9 @@ echo "$ciudad_residencia";
 echo "<br>";
 
 include "conn.php";
+include "uploadimage.php";
 $sql="INSERT INTO usuarios(nombres, apellidos, nacionalidad, genero, ciudad_residencia, foto, fecha_nacimiento, rut) 
-values('$nombres','$apellidos','$nacionalidad','$genero','$ciudad_residencia','1','$fecha_nacimiento','$rut')";
+values('$nombres','$apellidos','$nacionalidad','$genero','$ciudad_residencia','$target_file','$fecha_nacimiento','$rut')";
 if($conexion->query($sql)===TRUE)
 {
     echo "Los registros se ingresaron con éxito";

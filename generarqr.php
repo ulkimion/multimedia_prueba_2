@@ -6,7 +6,7 @@ $dir = 'temp/';
 if(!file_exists ($dir))
     mkdir($dir);
 
-$filename = $dir.'test2.png';
+$filename = $dir.$nombres.'_'.$apellidos.'_qr.png';
  
 
 $tamanio = 10;
